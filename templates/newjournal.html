@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="EN">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title></title>
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <!-- Links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Homepage</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/thoughts">View Journals</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/new">Upload Journal</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container">
+      <h1 style="padding-top: 30px; padding-bottom: 40px">New Entries</h1>
+      <form method="POST" action="{{url_for('addJournal')}}">
+        <div class="row">
+          <div class="col-sm-1">
+            <label>Date:</label>
+          </div>
+          <div class="col-sm-4">
+            <input
+              type="text"
+              id="date"
+              name="date"
+              placeholder="Enter date"
+              class="form-control form-control-sm"
+            />
+          </div>
+          <div class="col-sm-1">
+            <label>Title:</label>
+          </div>
+          <div class="col-sm-6">
+            <input
+              type="text"
+              id="title"
+              name="title"
+              placeholder="What's the title?"
+              class="form-control form-control-sm"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-1">
+            <label>Author:</label>
+          </div>
+          <div class="col-sm-3">
+            <input
+              type="text"
+              id="author"
+              name="author"
+              placeholder="Your Name"
+              class="form-control form-control-sm"
+            />
+          </div>
+
+          <div class="col-sm-1">
+            <label>Tag:</label>
+          </div>
+          <div class="col-sm-3">
+            <input
+              type="text"
+              id="tag"
+              name="tag"
+              placeholder="Enter tag"
+              class="form-control form-control-sm"
+            />
+          </div>
+
+          <div class="col-sm-1">
+            <label>Emotion:</label>
+          </div>
+          <div class="col-sm-3">
+          <select name="emotion"class="form-control form-control-sm">
+            <option selected>How are you feeling?</option>
+            <option value="Happy">Happy</option>
+            <option value="Sad">Sad</option>
+            <option value="Neutral">Neutral</option>
+          </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <label>Entry:</label>
+            <textarea
+              class="form-control form-control-sm"
+              rows="16"
+              id="content"
+              name="content"
+            ></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Upload!</button>
+      </form>
+    </div>
+  </body>
+</html>
